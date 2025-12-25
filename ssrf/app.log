@@ -1,0 +1,11 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://10.213.67.61:5002
+Press CTRL+C to quit
+127.0.0.1 - - [20/Dec/2025 10:22:27] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [20/Dec/2025 10:22:27] "GET /sanctum HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2025 10:22:27] "GET /master_seal HTTP/1.1" 200 -
+127.0.0.1 - - [20/Dec/2025 10:22:27] "POST /sanctum HTTP/1.1" 200 -

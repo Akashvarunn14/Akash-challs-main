@@ -1,0 +1,68 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5005
+ * Running on http://172.26.155.61:5005
+Press CTRL+C to quit
+127.0.0.1 - - [04/Dec/2025 13:06:55] "POST /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:06:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:06:57] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:07:09] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:07:09] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:07:09] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:07:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:07:25] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:07:29] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:07:29] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:07:29] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:07:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:07:45] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:08:01] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:08:01] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:08:01] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:08:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:08:17] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:08:30] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:08:30] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:08:30] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:08:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:08:45] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:01] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:09:01] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:01] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:09:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:17] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:29] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:09:29] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:29] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:09:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:45] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:50] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:09:50] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:09:50] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:10:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:10:06] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:10:21] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:10:21] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:10:21] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:10:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:10:37] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:10:53] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:10:53] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:10:53] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:11:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:09] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:12] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:11:12] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:12] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:11:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:27] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:30] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:11:30] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:30] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [04/Dec/2025 13:11:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:46] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:49] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Dec/2025 13:11:49] "GET /guestbook HTTP/1.1" 200 -
+127.0.0.1 - - [04/Dec/2025 13:11:49] "GET /static/style.css HTTP/1.1" 304 -

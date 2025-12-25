@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Whispering Scroll</title>
+
+    <style>
+        :root {
+            --primary: #00ff9d;
+            --bg: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(0, 255, 157, 0.2);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #000000 100%);
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.1);
+            animation: fadeIn 1s ease-out;
+            position: relative;
+            /* Essential for containing the moving button */
+            overflow: hidden;
+            /* Keeps the button from flying off the page */
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 2.5em;
+            text-align: center;
+            text-shadow: 0 0 15px var(--primary);
+            margin-bottom: 30px;
+        }
+
+        /* Vision Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 50px var(--primary);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1.1em;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
+        }
+
+        button {
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #00cc7d;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+        }
+
+        .vision-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            width: 200px;
+            margin: 0 auto 30px auto;
+            display: block;
+            /* UPDATED CSS FOR MOVEMENT */
+            position: relative;
+            transition: top 0.05s ease, left 0.05s ease;
+            z-index: 10;
+        }
+
+        .vision-btn:hover {
+            background: rgba(0, 255, 157, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
+        }
+
+        .result {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.9em;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .locked {
+            opacity: 0.2;
+            pointer-events: none;
+            filter: blur(4px);
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="mainContainer">
+        <h1>The Whispering Scroll</h1>
+
+        <button class="vision-btn" id="runawayBtn" onclick="showVision()">Get Flag</button>
+
+        <form action="/sanctum" method="POST">
+            <div class="input-group locked" id="scrollInput">
+                <input type="text" name="url" placeholder="Ask the scroll to look at..." required>
+                <button type="submit">Gaze</button>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>The Scroll Reveals:</h3>
+            <pre>{{ result }}</pre>
+        </div>
+        {% endif %}
+    </div>
+
+    <div id="visionModal" class="modal" onclick="hideVision()">
+        <div class="modal-content">
+            <video id="visionVideo" controls>
+                <source src="{{ url_for('static', filename='success.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // --- NEW LOGIC FOR EVASIVE BUTTON ---
+        const btn = document.getElementById('runawayBtn');
+        const container = document.getElementById('mainContainer');
+
+        btn.addEventListener('mouseover', function () {
+            // Move to body to escape container bounds and transforms
+            if (btn.parentNode !== document.body) {
+                document.body.appendChild(btn);
+                btn.style.position = 'fixed';
+                btn.style.zIndex = '9999';
+            }
+
+            // Calculate maximum allowed positions based on Viewport
+            const maxX = window.innerWidth - btn.offsetWidth;
+            const maxY = window.innerHeight - btn.offsetHeight;
+
+            // Generate random positions
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            // Apply new position
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+
+            // Optional: Change text to taunt the user
+            const taunts = ["Too slow!", "Catch me if you can!", "Nope!", "Try again!"];
+            btn.innerText = taunts[Math.floor(Math.random() * taunts.length)];
+        });
+
+        // --- EXISTING LOGIC ---
+        function showVision() {
+            const modal = document.getElementById('visionModal');
+            const video = document.getElementById('visionVideo');
+            const inputGroup = document.getElementById('scrollInput');
+            const btn = document.getElementById('runawayBtn');
+
+            // Unlock the form
+            inputGroup.classList.remove('locked');
+
+            // Hide the button (it has served its purpose)
+            btn.style.display = 'none';
+
+            modal.style.display = 'flex';
+            video.play();
+        }
+
+        function hideVision() {
+            const modal = document.getElementById('visionModal');
+            const video = document.getElementById('visionVideo');
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+        }
+    </script>
+</body>
+
+</html>
