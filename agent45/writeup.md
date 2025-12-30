@@ -1,11 +1,11 @@
-=
+
 
 # Agent 45 – Challenge Writeup
 
 ## Challenge Description
 
 * **Name:** Agent 45
-* **Category:** Web / PrivEsc
+* **Category:** Web 
 * **Difficulty:** Medium
 
 ![Challenge Banner](https://github.com/user-attachments/assets/ef8bbdfe-a8dd-4682-bcf8-bc26da8a84e2)
