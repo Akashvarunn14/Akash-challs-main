@@ -234,7 +234,7 @@ cat /root/flag.txt
 ## Flag
 
 ```
-CTF{4g3n7_45_m15510n_c0mpl373d_w3ll_d0n3}
+L3m0nctf{4g3n7_45_m15510n_c0mpl373d_w3ll_d0n3}
 ```
 
 ---
