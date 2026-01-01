@@ -1,4 +1,4 @@
-# 🕸️ Akash Web CTF Challenges
+#  Akash Web&pwn CTF Challenges
 
 Welcome to **Akash-challs** — a curated collection of **realistic web security CTF challenges** designed to mirror actual vulnerabilities found in the wild.
 
