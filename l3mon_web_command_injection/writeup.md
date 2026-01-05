@@ -4,7 +4,6 @@
 **Category:** Web / Command Injection
 **Objective:** Read the content of `flag.txt`.
 
-## Step-by-Step Solution
 
 ### 1. Initial Reconnaissance
 The challenge provides a calculator interface.
