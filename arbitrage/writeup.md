@@ -133,9 +133,5 @@ This vulnerability chain closely resembles real-world promotional abuse and e-co
 
 ---
 
-## Flag
 
-```
-l3mon{c0up0n_st4ck1ng_1s_th3_n3w_4rb1tr4g3}
-```
 
