@@ -1,34 +1,54 @@
-#  Akash Web&pwn CTF Challenges
+# akvnn Web & Pwn CTF Challenges
 
-Welcome to **Akash-challs** — a curated collection of **realistic web security CTF challenges** designed to mirror actual vulnerabilities found in the wild.
+Welcome to **Akash-challs** — a collection of **Web and Pwn CTF challenges** built to feel realistic and practical.
 
-These aren’t toy problems. Each challenge is built to make you **read code, think like an attacker, and chain bugs** the way it happens IRL.
-
----
-
-## 🚀 What You’ll Find Here
-
-This repository focuses on **Web Exploitation** challenges, including (but not limited to): 
-
-Each challenge is crafted to:
-- Look *normal* at first glance  
-- Avoid obvious hints or comments  
-- Force players to **analyze source code**
-- Teach **real attacker tradecraft**
+These challenges aren’t meant to spoon-feed. You’re expected to **read code, break assumptions, and think like an attacker**. The goal is to mirror how vulnerabilities actually show up in real systems.
 
 ---
 
-## 📂 Repository Structure
+## What’s in here?
+
+This repo mainly focuses on:
+- Web exploitation challenges  
+- Logic bugs & auth issues  
+- Input handling mistakes  
+- Misconfigurations  
+- Binary exploitation (pwn) challenges  
+
+Each challenge is designed to:
+- Look normal at first
+- Avoid obvious hints
+- Force source code analysis
+- Encourage chaining multiple bugs
+
+---
+
+## Writeups
+
+Each challenge contains a **`writeup.md`** file.
+
+That file includes:
+- Vulnerability analysis
+- Exploitation steps
+- Payloads / scripts (if any)
+- Final flag retrieval
+
+If you’re stuck or reviewing later, that’s where the full breakdown lives.
+
+---
+
+## Repository Structure
 
 ```text
 Akash-challs/
 ├── challenge-name/
 │   ├── app/              # Source code
 │   ├── docker-compose.yml
-│   ├── README.md         # Challenge-specific description
-│   └── flag.txt          # Flag (server-side)
+│   ├── README.md         # Challenge description
+│   ├── writeup.md        # Full solution & explanation
+│   └── flag.txt          # Server-side flag
 │
 ├── another-challenge/
 │   └── ...
 │
-└── README.md             # You are here
+└── README.md             # see the writeup
